@@ -151,7 +151,7 @@
     fetchDataAndDisplayTable();
 
     // Set up WebSocket to update table in real-time
-    const ws = new WebSocket('ws://localhost:3000');
+    const ws = new WebSocket({ noServer: true });
     ws.onmessage = function(event) {
       const message = JSON.parse(event.data);
       fetchDataAndDisplayTable(); // Update table when WebSocket receives a message
