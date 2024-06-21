@@ -3,7 +3,7 @@ import { WebSocketServer, WebSocket } from 'ws';
 import fs from 'fs';
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 let data = JSON.parse(fs.readFileSync('./data/status.json', 'utf8'));
 
 app.use(express.static('public'));
